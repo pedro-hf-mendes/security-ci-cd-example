@@ -1,3 +1,5 @@
+name: Semgrep Security Scan
+
 on:
   push:
     branches: [ main ]
@@ -12,8 +14,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Run Semgrep (Security Audit Rules)
+      - name: Run Semgrep
         uses: returntocorp/semgrep-action@v1
         with:
-          config: p/owasp-top-ten,p/security-audit
-          generateSarif: "1"
+          config: |
+            p/owasp-top-ten
+            p/security-audit
