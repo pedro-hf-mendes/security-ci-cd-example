@@ -1,4 +1,4 @@
-name: "Semgrep"
+name: Semgrep Security Scan
 
 on:
   push:
@@ -14,7 +14,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Run Semgrep security scan
+      - name: Run Semgrep
         uses: returntocorp/semgrep-action@v1
         with:
-          config: p/ci
+          config: |
+            p/owasp-top-ten
+            p/security-audit
