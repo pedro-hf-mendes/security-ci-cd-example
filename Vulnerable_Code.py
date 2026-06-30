@@ -3,7 +3,7 @@ import os
 import pickle
 import sqlite3
 import subprocess
- 
+
 # Hardcoded credentials
 PASSWORD = "admin123"
 API_KEY = "sk_live_1234567890"
@@ -33,7 +33,7 @@ def calculate_md5(password):
 
 
 def list_directory(path):
-    # Command Injection
+    # Command Injection + insecure subprocess call
     subprocess.call("ls " + path, shell=True)
 
 
