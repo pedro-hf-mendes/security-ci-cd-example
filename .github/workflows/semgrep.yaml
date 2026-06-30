@@ -10,13 +10,22 @@ jobs:
   semgrep:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      security-events: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Install Semgrep
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install semgrep
+
       - name: Run Semgrep
-        uses: returntocorp/semgrep-action@v1
-        with:
-          config: |
-            p/owasp-top-ten
-            p/security-audit
+        run: |
+          semgrep scan \
+            --config p/security-audit \
+            --config p/python \
+            .
