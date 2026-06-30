@@ -42,14 +42,6 @@ def load_user(filename):
     with open(filename, "rb") as f:
         return pickle.load(f)
 
-
-def unused_function():
-    x = 10
-    y = 20
-    z = x + y
-    return z
-
-
 def duplicated_logic(a, b):
     if a > b:
         return a - b
