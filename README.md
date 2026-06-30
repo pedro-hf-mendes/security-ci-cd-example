@@ -4,7 +4,7 @@ Repositório mínimo para teste de ferramentas de ci/cd focadas em segurança
 
 ## Pipeline 
 
-Os [arquivos de configuração de ci/cd](.github/workflows/) estão configurados para rodar as ferramentas Semgrep e CodeQL em todo commit ou pull request para a branch main. 
+Os [arquivos de configuração de ci/cd](.github/workflows/) estão configurados para rodar um scan utilizando da ferramenta CodeQL a cada push e PR na branch main
 
 A branch insecure-development contém um código em Python intencionalmente inseguro, servindo de teste para entender como as ferramentas se comportam diante deste cenário. 
 
